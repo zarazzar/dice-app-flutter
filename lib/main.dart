@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:dice_app/gradient_container.dart';
+
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: Scaffold(
       //backgroundColor: Color.fromARGB(255, 105, 25, 255),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 255, 167, 140),
-              Color.fromARGB(255, 255, 77, 23)
-            ],
-          ),
-        ),
-        child: const Center(
-          child: Text('Azzar Rizky'),
-        ),
-      ),
+      body: gradient_container(Colors.deepOrange, Colors.orange),
     ),
   ));
 }

@@ -8,6 +8,10 @@ final endAlignment = Alignment.bottomRight;
 class gradient_container extends StatelessWidget {
   const gradient_container(this.color1, this.color2, {super.key});
 
+  const gradient_container.orange({super.key})
+      : color1 = Colors.deepOrange,
+        color2 = Colors.orange;
+
   final Color color1;
   final Color color2;
 
@@ -25,8 +29,11 @@ class gradient_container extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: styled_text('Alo Beb'),
+      child: Center(
+        child: Image.asset(
+          'assets/img/dice-2.png',
+          width: 200,
+        ),
       ),
     );
   }

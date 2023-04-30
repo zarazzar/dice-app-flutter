@@ -7,6 +7,7 @@ void main() {
     home: Scaffold(
       //backgroundColor: Color.fromARGB(255, 105, 25, 255),
       body: gradient_container(Colors.deepOrange, Colors.orange),
+      //gradient_container.orange(),
     ),
   ));
 }

@@ -2,18 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'package:dice_app/styled_text.dart';
 
-final startAlignment = Alignment.topLeft;
-final endAlignment = Alignment.bottomRight;
-
 class gradient_container extends StatelessWidget {
-  const gradient_container(this.color1, this.color2, {super.key});
+  gradient_container(this.color1, this.color2, {super.key});
 
-  const gradient_container.orange({super.key})
+  gradient_container.orange({super.key})
       : color1 = Colors.deepOrange,
         color2 = Colors.orange;
 
   final Color color1;
   final Color color2;
+
+  final startAlignment = Alignment.topLeft;
+  final endAlignment = Alignment.bottomRight;
+  var activeDiceImage = 'assets/img/dice-1.png';
+
+  void onPressed() {
+    activeDiceImage = 'assets/img/dice-4.png';
+    print('Changing image...');
+  }
 
   @override
   Widget build(context) {
@@ -30,14 +36,35 @@ class gradient_container extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset(
-          'assets/img/dice-2.png',
-          width: 200,
-        ),
-      ),
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            activeDiceImage,
+            width: 200,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          TextButton(
+            onPressed: onPressed,
+            style: TextButton.styleFrom(
+              // padding: const EdgeInsets.only(top: 20),
+              foregroundColor: Colors.white,
+              textStyle: const TextStyle(
+                fontSize: 18,
+              ),
+              // backgroundColor: Colors.orange),
+            ),
+            child: const Text('Kocok Dadu'),
+          )
+        ],
+      )),
     );
   }
 }
+
+
 
 // class gradient_container extends StatelessWidget {
 //   const gradient_container({required this.colors, super.key});

@@ -1,8 +1,7 @@
 # dice_app
 
-A new Flutter project.
-
-## Getting Started
+A Simple dice App 
+![image](https://user-images.githubusercontent.com/90712252/235459047-647a06bc-1832-47c8-9b47-aabb3657f97c.png)
 
 This project is a starting point for a Flutter application.
 

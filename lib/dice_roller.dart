@@ -11,12 +11,14 @@ class dice_roller extends StatefulWidget {
   }
 }
 
+final randomizer = Random();
+
 class _DiceRollerState extends State<dice_roller> {
   var currentDiceNumber = 1;
 
   void onPressed() {
     setState(() {
-      currentDiceNumber = Random().nextInt(6) + 1; //0-5
+      currentDiceNumber = randomizer.nextInt(6) + 1; //0-5
     });
   }
 

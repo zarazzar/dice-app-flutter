@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:dice_app/styled_text.dart';
+import 'package:dice_app/dice_roller.dart';
 
 class gradient_container extends StatelessWidget {
-  gradient_container(this.color1, this.color2, {super.key});
+  const gradient_container(this.color1, this.color2, {super.key});
 
-  gradient_container.orange({super.key})
+  const gradient_container.orange({super.key})
       : color1 = Colors.deepOrange,
         color2 = Colors.orange;
 
@@ -14,12 +15,6 @@ class gradient_container extends StatelessWidget {
 
   final startAlignment = Alignment.topLeft;
   final endAlignment = Alignment.bottomRight;
-  var activeDiceImage = 'assets/img/dice-1.png';
-
-  void onPressed() {
-    activeDiceImage = 'assets/img/dice-4.png';
-    print('Changing image...');
-  }
 
   @override
   Widget build(context) {
@@ -35,31 +30,7 @@ class gradient_container extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: Center(
-          child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            activeDiceImage,
-            width: 200,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TextButton(
-            onPressed: onPressed,
-            style: TextButton.styleFrom(
-              // padding: const EdgeInsets.only(top: 20),
-              foregroundColor: Colors.white,
-              textStyle: const TextStyle(
-                fontSize: 18,
-              ),
-              // backgroundColor: Colors.orange),
-            ),
-            child: const Text('Kocok Dadu'),
-          )
-        ],
-      )),
+      child: Center(child: dice_roller()),
     );
   }
 }
